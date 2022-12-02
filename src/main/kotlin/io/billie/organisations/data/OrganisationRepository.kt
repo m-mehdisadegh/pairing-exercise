@@ -85,13 +85,15 @@ class OrganisationRepository {
                             "(" +
                             "phone_number, " +
                             "fax, " +
-                            "email" +
-                            ") values(?,?,?)",
+                            "email," +
+                            "address" +
+                            ") values(?,?,?,?)",
                     arrayOf("id")
                 )
                 ps.setString(1, contactDetails.phoneNumber)
                 ps.setString(2, contactDetails.fax)
                 ps.setString(3, contactDetails.email)
+                ps.setString(4,contactDetails.address)
                 ps
             },
             keyHolder
@@ -99,24 +101,29 @@ class OrganisationRepository {
         return keyHolder.getKeyAs(UUID::class.java)!!
     }
 
-    private fun organisationQuery() = "select " +
-            "o.id as id, " +
-            "o.name as name, " +
-            "o.date_founded as date_founded, " +
-            "o.country_code as country_code, " +
-            "c.id as country_id, " +
-            "c.name as country_name, " +
-            "o.VAT_number as VAT_number, " +
-            "o.registration_number as registration_number," +
-            "o.legal_entity_type as legal_entity_type," +
-            "o.contact_details_id as contact_details_id, " +
-            "cd.phone_number as phone_number, " +
-            "cd.fax as fax, " +
-            "cd.email as email " +
-            "from " +
-            "organisations_schema.organisations o " +
-            "INNER JOIN organisations_schema.contact_details cd on o.contact_details_id::uuid = cd.id::uuid " +
-            "INNER JOIN organisations_schema.countries c on o.country_code = c.country_code "
+    private fun organisationQuery() : String{
+        var queryStr: String = "select " +
+                "o.id as id, " +
+                "o.name as name, " +
+                "o.date_founded as date_founded, " +
+                "o.country_code as country_code, " +
+                "c.id as country_id, " +
+                "c.name as country_name, " +
+                "o.VAT_number as VAT_number, " +
+                "o.registration_number as registration_number," +
+                "o.legal_entity_type as legal_entity_type," +
+                "o.contact_details_id as contact_details_id, " +
+                "cd.phone_number as phone_number, " +
+                "cd.fax as fax, " +
+                "cd.email as email, " +
+                "cd.address as address " +
+                "from " +
+                "organisations_schema.organisations o " +
+                "INNER JOIN organisations_schema.contact_details cd on o.contact_details_id::uuid = cd.id::uuid " +
+                "INNER JOIN organisations_schema.countries c on o.country_code = c.country_code "
+        print(queryStr)
+        return queryStr
+    }
 
     private fun organisationMapper() = RowMapper<OrganisationResponse> { it: ResultSet, _: Int ->
         OrganisationResponse(
@@ -136,7 +143,8 @@ class OrganisationRepository {
             UUID.fromString(it.getString("contact_details_id")),
             it.getString("phone_number"),
             it.getString("fax"),
-            it.getString("email")
+            it.getString("email"),
+            it.getString("address")
         )
     }
 

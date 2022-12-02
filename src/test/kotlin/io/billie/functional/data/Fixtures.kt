@@ -18,6 +18,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -33,6 +34,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -48,6 +50,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -75,6 +78,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -91,6 +95,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -106,6 +111,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -122,6 +128,7 @@ object Fixtures {
                 "    \"phone_number\": \"+443700100222\",\n" +
                 "    \"fax\": \"\",\n" +
                 "    \"email\": \"yourquestions@bbc.co.uk\"\n" +
+                "    \"address\": \"London, Times Square\"\n" +
                 "  }\n" +
                 "}"
     }
@@ -144,6 +151,7 @@ object Fixtures {
         data["phone_number"] = "+443700100222"
         data["fax"] = ""
         data["email"] = "yourquestions@bbc.co.uk"
+        data["address"] = "London, Times Square"
         return data
     }
 
